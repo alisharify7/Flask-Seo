@@ -47,6 +47,7 @@ add this url to robots.txt no matter if its not secure
 the set_seo_connection() has to connector redis, default 
 
 in `default` mode all urls are stored in app.config variabe
+
 in `redis` mode all urls are stored in redis database
 
 ```
