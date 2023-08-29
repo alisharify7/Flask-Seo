@@ -5,8 +5,8 @@ a simple Flask Extension for Improving Seo(Search engine optimization)
 
 installation:
 
-      pip install flask_seo -U
-
+      ----
+      Not Implemented Yet
 
 
 
