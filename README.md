@@ -47,7 +47,7 @@ in `default` mode all urls are stored in app.config varable
 
 in `redis` mode all urls are stored in redis database
 
-```
+```python
 # Redis Connection
 from redis import Redis
 from flask import Flask
@@ -59,7 +59,7 @@ app.set_seo_connection('redis', r)
 ```
 
 
-```
+``` python
 # default Connection
 from flask import Flask
 from Flask_Seo.Seo import Flask
