@@ -14,33 +14,30 @@ installation:
 
 
 ```python
-# from flask import Flask (Dont Use This instead Use Flask_Seo.Seo.Flask class)
+from flask import Flask
+from Flask_Seo import FlaskSeo
 
-from Flask_Seo.Seo import Flask
+app = FlaskSeo(Flask, __name__)
 
-app = Flask(__name__)
 
-app.set_seo_connection('redis', Redis) 
-       or
+app.set_seo_connection('redis', redis.Redis) 
+or
 app.set_seo_connection('default', True) 
 
 
 
-@app.route("/", SeoCheck=True, ForceSeo=True)
+@app.route("/", SeoCheck=True, ForceSeo=True, UserAgent="*")
 def index():
      return "Index page"
-
 ```
 
-### flask_seo.Seo.Flask class is actually flask.Flask Class But some Methods are overloaded for keep tracking of each url 
-
-## This two attributes are added in route method 
   
-        SeoCheck:bool=True, ForceSeo:bool=True
+    SeoCheck:bool=True, ForceSeo:bool=True UserAgent:str="*"
 
 if you wanna an url indexed in Robots.txt File use `SeoCheck=True` in route function to saying to flask_seo add this url to robots.txt file
 some urls by security reasons cannot added to robots.txt file if you wanna force Flask_seo to index these type of urls use `SeoForce=True` this means
 add this url to robots.txt no matter if its not secure
+use UserAgent="some agent name" for specifying user-agent that you want to index the urls
 
 
 ### app.set_seo_connection('connector_type',  connector)
@@ -53,9 +50,10 @@ in `redis` mode all urls are stored in redis database
 ```
 # Redis Connection
 from redis import Redis
-from Flask_Seo.Seo import Flask
+from flask import Flask
+from Flask_Seo import FlaskSeo
 
-app = Flask(__name__)
+app = FlaskSeo(Flask, __name__)
 r = Redis()
 app.set_seo_connection('redis', r)
 ```
@@ -63,9 +61,10 @@ app.set_seo_connection('redis', r)
 
 ```
 # default Connection
+from flask import Flask
 from Flask_Seo.Seo import Flask
 
-app = Flask(__name__)
+app = FlaskSeo(Flask ,__name__)
 app.set_seo_connection('default', True)
 ```
 

@@ -4,9 +4,9 @@ from colorama import Fore
 
 
 
-def get_logger():
+def get_logger(level):
     """log in stdout"""                                                                                                     
-    logLevel = logging.INFO                                         
+    logLevel = level
 
     log_format = logging.Formatter(f'[{Fore.YELLOW}Flask Seo{Fore.RESET} - %(levelname)s] [%(asctime)s] - %(message)s')
     logger = logging.getLogger(__name__)                                  

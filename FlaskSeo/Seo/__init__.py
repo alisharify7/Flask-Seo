@@ -1,1 +1,1 @@
-from .Classes import Flask
+from .Classes import FlaskSeo
