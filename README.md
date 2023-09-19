@@ -70,10 +70,11 @@ app.set_seo_connection('default', True)
 
 
 
-### /robots.txt view automatically generate all urls text file and return robots.txt file for search engines
+### /robots.txt view automatically generate all urls file and return robots.txt file for search engines
+### /sitemap.xml view automatically generate all urls file and return sitemap.xml file for search engines
 
 
-# Note: this extension only overload some functions in flask.Flask Class to add some functionality for keep watching on every url endpoint in app
+#### Note: this extension only overload some functions in flask.Flask Class to add some functionality for keep watching on every url endpoint in app
 
 
 
