@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
 
-""" 
-    Flask-Seo MIT license 2023
-        auther: ali sharify
+"""
+    Flask-Seo
+     Copyright (c) 2023-2023 Alisharify,
+     Author: alisharify <lisharifyofficial@gmail.com>
  """
 
 import re
