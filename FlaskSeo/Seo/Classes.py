@@ -2,7 +2,7 @@
 
 """
     Flask-Seo
-     Copyright (c) 2023-2023 Alisharify,
+     Copyright (c) 2023-2023 Alisharify, GPL-3 license
      Author: alisharify <lisharifyofficial@gmail.com>
  """
 
