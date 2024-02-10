@@ -1,34 +1,31 @@
 from flask import Flask
 from FlaskSeo import FlaskSeo
 
-app = FlaskSeo(Flask, __name__)
-app.set_seo_connection("default", True)
+app = FlaskSeo(flask_cls=Flask, name=__name__)
 
-
-
-@app.route("/AllUserAgent/", SeoCheck=True, UserAgent="*")
-def AllUserAgent():
+@app.route("/AllUserAgents/", SeoCheck=True, UserAgents=["*"])
+def AllUserAgents():
     return "Hello"
 
 
-@app.route("/AppleBotUserAgent/", SeoCheck=True, UserAgent="AppleBot")
-def UserAgent():
+@app.route("/AppleBotUserAgents/", SeoCheck=False, UserAgents=["AppleBot"])
+def UserAgents():
     return "Hello"
 
 
-@app.route("/bingbotUserAgent", SeoCheck=True, UserAgent="BingBot")
-def bingbotUserAgent():
+@app.route("/bingbotUserAgents", SeoCheck=True, UserAgents=["BingBot"])
+def bingbotUserAgents():
     return "Hello"
 
 
-@app.route("/GoogleBotUserAgent", SeoCheck=True, UserAgent="GoogleBot")
-def GoogleBotUserAgent():
+@app.route("/GoogleBotUserAgents", SeoCheck=True, UserAgents=["GoogleBot"])
+def GoogleBotUserAgents():
     return "Hello"
 
 
 
 
-@app.route("/<string:name>/", SeoCheck=True, UserAgent="GoogleBot")
+@app.route("/<string:name>/", SeoCheck=True, UserAgents=["GoogleBot", "*"], SeoForce=True)
 def InvalidUrl():
     """
         because of using variable in url this url is not indexed in `robots.txt`
@@ -36,10 +33,11 @@ def InvalidUrl():
         SeoForce=True in parameters
 
         like:
-            @app.route("/<string:name>/", SeoCheck=True, SeoForce=True, UserAgent="GoogleBot")
+            @app.route("/<string:name>/", SeoCheck=True, SeoForce=True, UserAgents="GoogleBot")
 
     """
     return "Hello"
 
 
-
+if __name__ == "__main__":
+    app.run()

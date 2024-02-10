@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-__NAME__ = "Flask-Seo"
+__NAME__ = "FlaskSeo"
 __version__ = "1.0.0"
 __author__ = "ali sharify"
 __author_mail__ = "alisharifyofficial@gmail.com"
@@ -38,10 +38,9 @@ setup(
     license="MIT",
     install_requires=[
         "flask>=2.2.5",
-        "markupsafe>=2.1.2",
-        "requests>=2.30.0"
+        "redis>= 5.0.1",
     ],
     python_requires=">=3.8",
-    keywords='flask security, Google captcha for flask, captcha , flask, flask-captcha, flask-captcha2, flask_captcha2'
+    keywords='flask-seo, flask-search-engine-optimize, flaskseo, flask-google-seo'
 
 )
